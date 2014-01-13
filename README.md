@@ -1,4 +1,0 @@
-Kuang
-=====
-
-code lib
