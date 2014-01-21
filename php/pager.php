@@ -48,7 +48,7 @@ class Pager {
                     $page_list_str .= "<li $active><a href='" . $url . "/page/$i'>" . $i . "</a></li>";
                 }
             }
-        }
+        } 
         if ($this->page_count > $this->page_size) {
             $next_page = min($this->page + 1, $this->page_num);
             $page_list_str .="<li><a href='" . $url . "/page/" . $next_page . "'>&raquo;</a></li>";
