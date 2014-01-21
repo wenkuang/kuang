@@ -9,6 +9,9 @@
         z-index: 9999;
         background-color: rgb(255, 255, 255,0.8);
     }
+    a{cursor:pointer;}
+    .debugger ul{list-style-type: none;margin:0;padding:0;overflow-y: scroll;font-size:14px;line-height: 22px;}
+    .debugger li{padding:6px 0;}
     .debugger-title{
         width:100%;
         height:35px;
@@ -20,7 +23,7 @@
         padding-bottom:0;
         margin-bottom: 0;
         cursor: pointer;
-        background-color: rgb(10, 10, 10);
+        background-color: rgb(26,81,120);
         color:white;
     }
     .debugger-content{
@@ -28,7 +31,10 @@
         height:400px;
         overflow: scroll;
         padding-left:30px;
+        background-color:white;
     }
+    .debugger-sidebar{float:left;width:30%;}
+    .debugger-right{float:left;width:69%;}
 </style>
 <?php
 
@@ -46,13 +52,19 @@ class debugger {
             ?>
             <div class='debugger' >
                 <p class='debugger-title' onclick='show_debugger();'>Debugger: </p>
-                <pre class='debugger-content'><?php
+                <div class='debugger-content'><div class="debugger-sidebar"><ul><p><b>流程 ： </b></p><?php 
+                if (!empty(self::$data)) {
+                    foreach (self::$data as $key => $value) {
+                ?>
+                            <li><a  href="#_a<?php echo $key+1; ?>"><?php echo $key+1 . " : " .$value[0]; ?></a></li>
+                    
+                    <?php } } ?></ul></div><pre class="debugger-right"><?php
                     if (!empty(self::$data)) {
                         foreach (self::$data as $key => $value) {
                             if ($value[2]) {
-                                echo "<b>";
+                                echo "<b><a name='_a".($key+1)."'>";
                                 print_r($value[0]);
-                                echo "</b>";
+                                echo "</a></b>";
                             } else {
                                 print_r($value[0]);
                             }
@@ -63,24 +75,26 @@ class debugger {
                             echo "<br/>";
                         }
                     }
-                    ?>
+                    ?></pre>
                                         
-                </pre>
+                </div>
             </div>
             <?php
         }
     }
 
-}
+} 
 ?>
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script type='text/javascript'>
 
         function show_debugger() {
-            if ($(".debugger").height() == 400) {
+            if ($(".debugger").height() == "643") {
                 $(".debugger").height(35);
+                $(".debugger-content").height(400);
             } else {
-                $(".debugger").height(400);
+                $(".debugger").height("643");
+                $(".debugger-content").height(605);
             }
 
         }
