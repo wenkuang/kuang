@@ -3,6 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Book Said</title>
+     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+       <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+       <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Artifika' rel='stylesheet' type='text/css'>
 	<style>
 body {
@@ -10,9 +13,11 @@ body {
   margin: 0 auto;
   padding: 0 5%;
   font-size: 100%;
-  font-family: 'Artifika', serif;
+  font-family: 'Artifika', serif,"Microsoft Yahei";
   color: black;
-  background: white; }
+  background: white; 
+
+  }
 
 h2 {
   font-size: 1.8em;
@@ -23,148 +28,11 @@ a{
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-/* -------------------------------------
- * timeline
- * ------------------------------------- */
-#timeline {
-  list-style: none;
-  margin: 50px 0 30px 120px;
-  padding-left: 30px;
-  border-left: 8px solid #eee9dc; 
-  width:500px;
-}
-  #timeline li {
-    margin: 40px 0;
-    position: relative; }
-  #timeline p {
-    margin: 0 0 15px; }
-.relative label{padding-left: 20px;}
-.date {
-  margin-top: -10px;
-  top: 50%;
-  left: -158px;
-  font-size: 0.95em;
-  line-height: 20px;
-  position: absolute; }
-
-.circle {
-  margin-top: -10px;
-  top: 50%;
-  left: -44px;
-  width: 10px;
-  height: 10px;
-  background: #48b379;
-  border: 5px solid #eee9dc;
-  border-radius: 50%;
-  display: block;
-  position: absolute; }
-
-.content {
-  max-height: 20px;
-  padding: 50px 20px 0;
-  border-color: transparent;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 0.5em;
-  position: relative; }
-  .content:before, .content:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border: solid transparent;
-    position: absolute;
-    pointer-events: none;
-    right: 100%; }
-  .content:before {
-    border-right-color: inherit;
-    border-width: 20px;
-    top: 50%;
-    margin-top: -20px; }
-  .content:after {
-    border-right-color: white;
-    border-width: 17px;
-    top: 50%;
-    margin-top: -17px; }
-  .content p {
-    max-height: 0;
-    color: transparent;
-    text-align: justify;
-    word-break: break-word;
-    hyphens: auto;
-    overflow: hidden; }
-
-label {
-  font-size: 1.3em;
-  position: absolute;
-  z-index: 100;
-  cursor: pointer;
-  top: 20px;
-  transition: transform 0.2s linear; }
-
-.radio {
-  display: none; }
-
-.radio:checked + .relative label {
-  cursor: auto;
-  transform: translateX(42px); }
-.radio:checked + .relative .circle {
-  background: #f98262; }
-.radio:checked ~ .content {
-  max-height: 180px;
-  border-color: #eee9dc;
-  margin-right: 20px;
-  transform: translateX(20px);
-  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear; }
-  .radio:checked ~ .content p {
-    max-height: 200px;
-    color: black;
-    text-indent: 25px;
-    transition: color 0.3s linear 0.3s; }
-.logo{border-left:15px solid black;padding-left:10px;}
-/* -------------------------------------
- * mobile phones (vertical version only)
- * ------------------------------------- */
-@media screen and (max-width: 767px) {
-  #timeline {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: none; }
-    #timeline li {
-      margin: 50px 0; }
-
-  label {
-    width: 85%;
-    font-size: 1.1em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: block;
-    transform: translateX(18px); }
-
-  .content {
-    padding-top: 45px;
-    border-color: #eee9dc; }
-    .content:before, .content:after {
-      border: solid transparent;
-      bottom: 100%; }
-    .content:before {
-      border-bottom-color: inherit;
-      border-width: 17px;
-      top: -16px;
-      left: 50px;
-      margin-left: -17px; }
-    .content:after {
-      border-bottom-color: #48b379;
-      border-width: 20px;
-      top: -20px;
-      left: 50px;
-      margin-left: -20px; }
-    .content p {
-      font-size: 0.9em;
-      line-height: 1.4; }
-
-  .circle, .date {
-    display: none; } }
+table{border:1px solid #ccc; border-collapse:collapse;margin-top:40px;width:90%;clear:right;}
+th{text-align:left;}
+th,td{border:1px solid #ccc;padding:8px 18px;}
+.wrap{width:90%;margin-bottom:200px;}
+.left,.right{width:49%;float:left;}
 	</style>
 
   <script>
@@ -180,35 +48,69 @@ label {
 
 <h2 class="logo"> BookSaid</h2>
 <p>Projects, Html, CSS, Javascript, PHP , NodeJs , Mysql , Nginx, Computer Science, Developer Tools...</p>
-<ul id='timeline'>
-  <!--SVN 简易指南-->
-  <li class='work'>
-    <input class='radio' id='work4' name='works' type='radio'>
-    <div class="relative">
-      <label for='work4'>SVN 简易指南</label>
-      <span class='date'> 2014-01-28 </span>
-      <span class='circle'></span>
-    </div>
-    <div class='content'>
-      <p>&nbsp;</p>
-    </div>
-  </li>
-  <!--Git 简易指南-->
-  <li class='work'>
-    <input class='radio' id='work5' name='works' type='radio' checked>
-    <div class="relative">
-      <label for='work5'><a href="http://booksaid.cn/documents/git" target="_blank">Git 简易指南</a></label>
-      <span class='date'> 2014-01-28 </span>
-      <span class='circle'></span>
-    </div>
-    <div class='content'>
-      <p>&nbsp;</p>
-    </div>
-  </li>
-</ul>
+<div class="wrap">
+	<div class="left">
+		<table>
+			<tr><th colspan="2">Jquery</th></tr>
+			<tr><td width="130">JQuery 数据类型</td><td>字符串</td></tr>
+			<tr><td></td><td>数组</td></tr>
+			<tr><td></td><td>对象</td></tr>
+			<tr><td width="130">表单</td><td></td></tr>
+			<tr><td></td><td>下拉列表</td></tr>
+
+			<tr><td width="80">JQuery UI</td><td></td></tr>
+			<tr><td></td><td>jQuery 主题编写</td></tr>
+			<tr><td>插件</td><td></td></tr>
+			<tr><td></td><td>jQuery 插件编写</td></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Javascript</th></tr>
+			
+		</table>
+		<table>
+			<tr><th colspan="2">Components</th></tr>
+			<tr><td width="130">Layout </td><td></td></tr>
+			<tr><td width="130">List </td><td></td></tr>
+			<tr><td width="130">Tips </td><td></td></tr>
+		</table>
+	</div>
+	<div class="right">
+			<table>
+			<tr><th colspan="4">PHP</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Mysql</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">NodeJs</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Python</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Nginx</th></tr>
+		</table>
+				<table>
+			<tr><th colspan="4">Apache</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Memcache</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Redis</th></tr>
+		</table>
+		<table>
+			<tr><th colspan="4">Developer Tools</th></tr>
+			<tr><td width="130">版本控制  </td><td><a href="http://booksaid.cn/documents/git/" target="_blank">Git</a></td></tr>
+			<tr><td width="130">  </td><td>SVN</td></tr>
+		</table>
+	</div>
+<div style="clear:both;"></div>
+</div>
+
+
 <script>
 </script>
 
 </body>
 </html>
-
