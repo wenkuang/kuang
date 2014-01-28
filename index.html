@@ -26,15 +26,37 @@ h2 {
   letter-spacing: 2px;
  }
 a{
-  font-family: "Microsoft Yahei";
+
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-table{border:1px solid #ccc; border-collapse:collapse;margin-top:40px;width:90%;clear:right;}
+table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
 th{text-align:left;}
 th,td{border:1px solid #ccc;padding:8px 18px;}
 .wrap{width:90%;margin-bottom:200px;}
 .left,.right{width:49%;float:left;}
+
+/**wk-menu**/
+.wk-menu{	box-shadow: 1px 1px 30px 10px rgb(250, 248, 248);border: 1px solid rgb(204, 204, 204);}
+.wk-menu,.wk-menu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 90%;
+	clear: both;
+	height: 43px;
+	
+}
+.wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
+
+.wk-menu li:hover,.active{background-color: rgb(40, 159, 220);}
+.wk-menu li:hover a,.active a{display:block;color:white;}
+.wk-menu li ul{display:none;}
+.wk-menu li:hover ul{display:block;}
+
+.wk-menu li ul{position:absolute;left:0;top:42px;width:150px;}
+.wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
+.wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
 	</style>
 
   <script>
@@ -50,7 +72,26 @@ th,td{border:1px solid #ccc;padding:8px 18px;}
 
 <h2 class="logo"> BookSaid</h2>
 <p>Projects, Html, CSS, Javascript, PHP , NodeJs , Mysql , Nginx, Computer Science, Developer Tools...</p>
+<ul class="wk-menu">
+	<li  class="active"><a href=""> Select :</a></li>
+	<li><a href="javascript:void(0);">Front End </a>
+	<ul>
+		<li> <a href="">Javascript</a></li>
+		<li> <a href="">Javascript</a></li>
+		<li> <a href="">Javascript</a></li>
+	</ul>
+	</li>
+	<li><a href="">Back End </a>
+	<ul>
+		<li> <a href="">PHP</a></li>
+		<li> <a href="">NodeJS</a></li>
+		<li> <a href="">Javascript</a></li>
+	</ul>
+	</li>
+	<li><a href="">Developer Tools </a></li>
+</ul>
 <div class="wrap">
+
 	<div class="left">
 		<table>
 			<tr><th colspan="2">Jquery</th></tr>
@@ -116,4 +157,3 @@ th,td{border:1px solid #ccc;padding:8px 18px;}
 
 </body>
 </html>
-
