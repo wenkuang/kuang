@@ -34,7 +34,10 @@
             th,td{border:1px solid #ccc;padding:8px 18px;}
             .wrap{width:90%;margin:0 auto;margin-top:60px;}
             .left,.right{width:49%;float:left;}
-
+            /**wk-code**/
+            pre.wk-code {font-family: consolas;
+                         
+            }
             /**wk-tab**/
             .wk-tab-content{
                 padding:10px 5px;
@@ -125,28 +128,33 @@
 
              <div class="wk-tab-content">
                  <div class="active" name="wk-tab-1">
-                     <img src="documents/yunwei/structure.jpg" width="500" align="left">
-随着信息时代的持续发展，IT运维已经成为IT服务内涵中重要的组成部分。面对越来越复杂的业务，面对越来越多样化的用户需求，不断扩展的IT应用需要越来越合理的模式来保障IT服务能灵活便捷、安全稳定地持续保障，这种模式中的保障因素就是IT运维（其他因素是更加优越的IT架构等）。从初期的几台服务器发展到庞大的数据中心，单靠人工已经无法满足在技术、业务、管理等方面的要求，那么标准化、自动化、架构优化、过程优化等降低IT服务成本的因素越来越被人们所重视。其中，自动化最开始作为代替人工操作为出发点的诉求被广泛研究和应用。
-IT运维从诞生发展至今，自动化作为其重要属性之一已经不仅仅只是代替人工操作，更重要的是深层探知和全局分析，关注的是在当前条件下如何实现性能与服务最优化，同时保障投资收益最大化。自动化对IT运维的影响，已经不仅仅是人与设备之间的关系，已经发展到了面向客户服务驱动IT运维决策的层面，IT运维团队的构成，也从各级技术人员占大多数发展到业务人员甚至用户占大多数的局面。
-因此，IT运维自动化是一组将静态的设备结构转化为根据IT服务需求动态弹性响应的策略，目的就是实现IT运维的质量，降低成本。可以说自动化一定是IT运维最高层面的重要属性之一，但不是全部。
+                     <pre class="wk-code"> 
+            $.fn.wk_tab = function(){
+                $(this).find(".wk-menu li").click(function(){
+                    $(this).closest(".wk-tab").find(".active").removeClass("active");
+                    $(this).addClass("active").closest(".wk-tab").find("div[name="+$(this).attr("name")+"]").addClass("active");
+                });
+            }
+            $(".wk-tab").wk_tab();
+                     </pre>
                  </div>
                     <div name="wk-tab-2">222</div>
                     <div name="wk-tab-3">333</div>
                     <div name="wk-tab-4">444</div>
                     <div name="wk-tab-5">555</div>
-                    <div name="wk-tab-6">666</div>
+                    <div name="wk-tab-6"><img src="documents/yunwei/structure.jpg" width="700" align="left"></div>
                 </div>
         <ul class="wk-menu">
-            <li  class=" active" name="wk-tab-1"><a href="javascript:void(0);"> 自动化运维</a></li>
+            <li  class=" active" name="wk-tab-1"><a href="javascript:void(0);"> jQuery</a></li>
             <li name="wk-tab-2"><a href="javascript:void(0);">Mysql </a></li>
-            <li name="wk-tab-3"><a href="javascript:void(0);">jQuery</a></li>
+            <li name="wk-tab-3"><a href="javascript:void(0);">CSS</a></li>
             <li name="wk-tab-4"><a href="javascript:void(0);">Linux Shell </a></li>
-            <li name="wk-tab-5"><a href="javascript:void(0);">Linux Shell </a></li>
-            <li name="wk-tab-6"><a href="javascript:void(0);">Linux Shell </a></li>
+            <li name="wk-tab-5"><a href="javascript:void(0);">PHP </a></li>
+            <li name="wk-tab-6"><a href="javascript:void(0);">自动化运维 </a></li>
         </ul>
               
             </div>
-            <div class="left">
+<!--            <div class="left">
                 <table>
                     <tr><th colspan="2">Jquery</th></tr>
                     <tr><td width="130">JQuery 数据类型</td><td>字符串</td></tr>
@@ -202,8 +210,8 @@ IT运维从诞生发展至今，自动化作为其重要属性之一已经不仅
                     <tr><td width="130">版本控制  </td><td><a href="http://booksaid.cn/documents/git/" target="_blank">Git</a></td></tr>
                     <tr><td width="130">  </td><td>SVN</td></tr>
                 </table>
-            </div>
-            <div style="clear:both;"></div>
+            </div>-->
+<!--            <div style="clear:both;"></div>-->
         </div>
 
 
