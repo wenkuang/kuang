@@ -1,158 +1,177 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Book Said</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Book Said</title>
 
-	<style>
-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
-  font-size: 100%;
-  font-family: 'Artifika', serif,"Microsoft Yahei";
-  color: black;
-  background: white; 
+        <style>
+            body {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 5%;
+                font-size: 100%;
+                font-family: 'Artifika', serif,"Microsoft Yahei";
+                color: black;
+                background: white; 
 
-  }
-@font-face {
-  font-family: 'Artifika';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Artifika Medium'), local('Artifika-Medium'), url(lib/fonts/Artifika.woff) format('woff');
-}
-h2 {
-  font-size: 1.8em;
-  letter-spacing: 2px;
- }
-a{
+            }
+            @font-face {
+                font-family: 'Artifika';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Artifika Medium'), local('Artifika-Medium'), url(lib/fonts/Artifika.woff) format('woff');
+            }
+            h2 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            a{
 
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
-th{text-align:left;}
-th,td{border:1px solid #ccc;padding:8px 18px;}
-.wrap{width:90%;margin-bottom:200px;}
-.left,.right{width:49%;float:left;}
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+            }
+            table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
+            th{text-align:left;}
+            th,td{border:1px solid #ccc;padding:8px 18px;}
+            .wrap{width:90%;margin-bottom:200px;}
+            .left,.right{width:49%;float:left;}
 
-/**wk-menu**/
-.wk-menu{	box-shadow: 1px 1px 30px 10px rgb(250, 248, 248);border: 1px solid rgb(204, 204, 204);}
-.wk-menu,.wk-menu ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	width: 90%;
-	clear: both;
-	height: 46px;
-	
-}
-.wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
-.wk-menu li:hover,.active{background-color: rgb(40, 159, 220);}
-.wk-menu li:hover a,.active a{display:block;color:white;}
-.wk-menu li ul{display:none;}
-.wk-menu li:hover ul{display:block;}
-.wk-menu li ul{position:absolute;left:0;top:42px;width:150px;}
-.wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
-.wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
-	</style>
+            /**wk-menu**/
+            .wk-menu{	box-shadow: 1px 1px 30px 10px rgb(250, 248, 248);border: 1px solid rgb(204, 204, 204);}
+            .wk-menu,.wk-menu ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 90%;
+                clear: both;
+                height: 46px;
 
-  <script>
-    // We really want to disable
-    window.open    = function() {};
-    window.alert   = function() {};
-    window.print   = function() {};
-    window.prompt  = function() {};
-    window.confirm = function() {};
-  </script>
-</head>
-<body >
+            }
+            .wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
+            .wk-menu li:hover,.active{background-color: rgb(40, 159, 220);}
+            .wk-menu li:hover a,.active a{display:block;color:white;}
+            .wk-menu li ul{display:none;}
+            .wk-menu li:hover ul{display:block;}
+            .wk-menu li ul{position:absolute;left:0;top:42px;width:150px;}
+            .wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
+            .wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
+        </style>
 
-<h2 class="logo"> BookSaid</h2>
-<p>Projects, Html, CSS, Javascript, PHP , NodeJs , Mysql , Nginx, Computer Science, Developer Tools...</p>
-<ul class="wk-menu">
-	<li  class="active"><a href=""> Category :</a></li>
-	<li><a href="javascript:void(0);">Front End </a>
-	<ul>
-		<li> <a href="">Javascript</a></li>
-		<li> <a href="">Javascript</a></li>
-		<li> <a href="">Javascript</a></li>
-	</ul>
-	</li>
-	<li><a href="">Back End </a>
-	<ul>
-		<li> <a href="">PHP</a></li>
-		<li> <a href="">NodeJS</a></li>
-		<li> <a href="">Javascript</a></li>
-	</ul>
-	</li>
-	<li><a href="">Developer Tools </a></li>
+        <script>
+            // We really want to disable
+            window.open = function() {
+            };
+            window.alert = function() {
+            };
+            window.print = function() {
+            };
+            window.prompt = function() {
+            };
+            window.confirm = function() {
+            };
+        </script>
+    </head>
+    <body >
+
+        <h2 class="logo"> BookSaid</h2>
+        <p>Projects, Html, CSS, Javascript, PHP , NodeJs , Mysql , Nginx, Computer Science, Developer Tools...</p>
+        <ul class="wk-menu">
+            <li  class="active"><a href=""> Category :</a></li>
+            <li><a href="javascript:void(0);">Front End </a>
+                <ul>
+                    <li> <a href="">Javascript</a></li>
+                    <li> <a href="">Javascript</a></li>
+                    <li> <a href="">Javascript</a></li>
+                </ul>
+            </li>
+            <li><a href="">Back End </a>
+                <ul>
+                    <li> <a href="">PHP</a></li>
+                    <li> <a href="">NodeJS</a></li>
+                    <li> <a href="">Javascript</a></li>
+                </ul>
+            </li>
+            <li><a href="">Developer Tools </a></li>
+        </ul>
+        <div class="wrap">
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+  <li><a href="#settings" data-toggle="tab">Settings</a></li>
 </ul>
-<div class="wrap">
 
-	<div class="left">
-		<table>
-			<tr><th colspan="2">Jquery</th></tr>
-			<tr><td width="130">JQuery 数据类型</td><td>字符串</td></tr>
-			<tr><td></td><td>数组</td></tr>
-			<tr><td></td><td>对象</td></tr>
-			<tr><td width="130">表单</td><td></td></tr>
-			<tr><td></td><td>下拉列表</td></tr>
-
-			<tr><td width="80">JQuery UI</td><td></td></tr>
-			<tr><td></td><td>jQuery 主题编写</td></tr>
-			<tr><td>插件</td><td></td></tr>
-			<tr><td></td><td>jQuery 插件编写</td></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Javascript</th></tr>
-			
-		</table>
-		<table>
-			<tr><th colspan="2">Components</th></tr>
-			<tr><td width="130">Layout </td><td></td></tr>
-			<tr><td width="130">List </td><td></td></tr>
-			<tr><td width="130">Tips </td><td></td></tr>
-		</table>
-	</div>
-	<div class="right">
-			<table>
-			<tr><th colspan="4">PHP</th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Mysql</th></tr>
-<tr><th><a href="/documents/mysql/mysql.pdf">Mysql 文档</a></th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">NodeJs</th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Python</th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Nginx</th></tr>
-		</table>
-				<table>
-			<tr><th colspan="4">Apache</th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Memcache</th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Redis</th></tr>
-		</table>
-		<table>
-			<tr><th colspan="4">Developer Tools</th></tr>
-			<tr><td width="130">版本控制  </td><td><a href="http://booksaid.cn/documents/git/" target="_blank">Git</a></td></tr>
-			<tr><td width="130">  </td><td>SVN</td></tr>
-		</table>
-	</div>
-<div style="clear:both;"></div>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">...</div>
+  <div class="tab-pane" id="profile">...</div>
+  <div class="tab-pane" id="messages">...</div>
+  <div class="tab-pane" id="settings">...</div>
 </div>
+            <div class="left">
+                <table>
+                    <tr><th colspan="2">Jquery</th></tr>
+                    <tr><td width="130">JQuery 数据类型</td><td>字符串</td></tr>
+                    <tr><td></td><td>数组</td></tr>
+                    <tr><td></td><td>对象</td></tr>
+                    <tr><td width="130">表单</td><td></td></tr>
+                    <tr><td></td><td>下拉列表</td></tr>
+
+                    <tr><td width="80">JQuery UI</td><td></td></tr>
+                    <tr><td></td><td>jQuery 主题编写</td></tr>
+                    <tr><td>插件</td><td></td></tr>
+                    <tr><td></td><td>jQuery 插件编写</td></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Javascript</th></tr>
+
+                </table>
+                <table>
+                    <tr><th colspan="2">Components</th></tr>
+                    <tr><td width="130">Layout </td><td></td></tr>
+                    <tr><td width="130">List </td><td></td></tr>
+                    <tr><td width="130">Tips </td><td></td></tr>
+                </table>
+            </div>
+            <div class="right">
+                <table>
+                    <tr><th colspan="4">PHP</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Mysql</th></tr>
+                    <tr><th><a href="/documents/mysql/mysql.pdf">Mysql 文档</a></th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">NodeJs</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Python</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Nginx</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Apache</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Memcache</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Redis</th></tr>
+                </table>
+                <table>
+                    <tr><th colspan="4">Developer Tools</th></tr>
+                    <tr><td width="130">版本控制  </td><td><a href="http://booksaid.cn/documents/git/" target="_blank">Git</a></td></tr>
+                    <tr><td width="130">  </td><td>SVN</td></tr>
+                </table>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
 
 
-<script>
-</script>
+        <script>
+        </script>
 
-</body>
+    </body>
 </html>
