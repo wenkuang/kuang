@@ -128,7 +128,7 @@
 
              <div class="wk-tab-content">
                  <div class="active" name="wk-tab-1">
-                     <div class="wk-code" id='editor'> 
+                     <pre class="wk-code"> 
             $.fn.wk_tab = function(){
                 $(this).find(".wk-menu li").click(function(){
                     $(this).closest(".wk-tab").find(".active").removeClass("active");
@@ -136,7 +136,7 @@
                 });
             }
             $(".wk-tab").wk_tab();
-                     </div>
+                     </pre>
                  </div>
                     <div name="wk-tab-2">222</div>
                     <div name="wk-tab-3">333</div>
@@ -213,7 +213,9 @@
             </div>-->
 <!--            <div style="clear:both;"></div>-->
         </div>
-
+<div id="editor">
+    dasdasdadd
+</div>
 <script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
         <script>
             $.fn.wk_tab = function(){
@@ -223,9 +225,10 @@
                 });
             }
             $(".wk-tab").wk_tab();
-    var editor = ace.edit("editor");
+ var editor = ace.edit("editor");
     editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/php");
+    editor.resize();
         </script>
 
     </body>
