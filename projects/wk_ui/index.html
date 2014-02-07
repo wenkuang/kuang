@@ -116,7 +116,7 @@
             <div id='editor' title='导航条'>
                 
             </div>
-            <div id='editor2' title='选项卡'>
+            <pre id='editor2' title='选项卡'>
                 $.fn.wk_tab = function(){
                     $(this).find(".wk-menu li").click(function(){
                         $(this).closest(".wk-tab").find(".active").removeClass("active");
@@ -124,20 +124,9 @@
                     });
                 }
                 $(".wk-tab").wk_tab();
-            </div>
+            </pre>
         </div>
 
-<script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-        <script>
- var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/github");
-    editor.getSession().setMode("ace/mode/php");
-    editor.resize();
- var editor2 = ace.edit("editor2");
-    editor2.setTheme("ace/theme/github");
-    editor2.getSession().setMode("ace/mode/php");
-    editor2.resize();
-        </script>
 
     </body>
 </html>
