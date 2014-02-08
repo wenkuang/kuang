@@ -126,7 +126,7 @@ read -p "请输入要创建的网站英文名称(需要文件夹命名标准):" 
 
 cat>>/etc/nginx/conf.d/$site_dir.conf&lt;&lt;EOF'#这里前面和后面都不能有空格'
 "server {
-    listen       80;\n
+    listen       80;
     server_name  localhost;
     access_log  /var/log/nginx/log/host.access.$site_dir.log  main;
     location / {
