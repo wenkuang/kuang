@@ -118,13 +118,13 @@ read -p "请输入要创建的网站英文名称(需要文件夹命名标准):" 
         fi
         if [ $site_dir = "" ]
         then
-                echo "您未输入网站名称";#需要判断网站是否已经存在
+                echo "您未输入网站名称";
         else
                 mkdir -p /sites/$site_dir;
                 mkdir -p /var/log/nginx/$site_dir;
                 echo "hi,this is $site_dir">/sites/$site_dir/index.html
 
-cat>>/etc/nginx/conf.d/$site_dir.conf<<EOF'#这里前面和后面都不能有空格'
+cat>>/etc/nginx/conf.d/$site_dir.conf&lt;&lt;EOF'#这里前面和后面都不能有空格'
 "server {
     listen       80;\n
     server_name  localhost;
