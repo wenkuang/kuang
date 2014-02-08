@@ -117,25 +117,11 @@
         </ul>
             </header>
         <div class="wrap">
-             <h3>自动安装Nginx</h3>
-            <div id='editor' title='自动安装Nginx'>#!/bin/bash
-#操作系统: CentOS
-
-#add repository
-releasever=`rpm -qi centos-release | grep Version | awk -F ':' '{print $2}'| awk -F ' ' '{print $1}'`;
-basearch=`arch`;
-echo "[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=0
-enabled=1">/etc/yum.repos.d/nginx.repo
-
-#install nginx
-yum install nginx
-
-#start nginx
-service nginx start                   
-            </div>
+             <dl>
+                 <dt>Nginx</dt>
+                 <dd><a href="./nginx_install.html" target="_blank">自动安装Nginx</a></dd>
+                 <dd><a href="./nginx_virtual_host.html" target="_blank">自动创建网站</a></dd>
+             </dl>
 
         </div>
 <script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
