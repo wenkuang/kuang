@@ -34,7 +34,6 @@
             th,td{border:1px solid #ccc;padding:8px 18px;}
             .wrap{width:90%;margin:0 auto;margin-top:60px;}
             .left,.right{width:49%;float:left;}
-            #editor{width:100%;height: 300px;}
             /**wk-code**/
             pre.wk-code {font-family: consolas;
                          
@@ -103,30 +102,29 @@
         </script>
     </head>
     <body >
-        <header class="wk-bar">
-        <ul class="wk-menu">
-            <li  class="active"><a href=""> 自动化运维</a></li>
-            <li><a href="javascript:void(0);">Nginx </a>
-            </li>
-            <li><a href="javascript:void(0);">Apache </a>
-            </li>
-            <li><a href="javascript:void(0);">PHP</a>
-            </li>
-            <li><a href="javascript:void(0);">Nodejs </a>
-            </li>
-        </ul>
-            </header>
+
         <div class="wrap">
-            <table>
-                <tr><th colspan="2" width="80">Nginx</th></tr>
-                <tr><td>1</td><td><a href="./code/nginx_install.html" target="_blank">自动安装Nginx</a></td></tr>
-                <tr><td>2</td><td><a href="./code/nginx_virtual_host.html" target="_blank">自动创建网站</a></td></tr>
-                <tr><th colspan="2" width="80">Python</th></tr>
-                <tr><td>1</td><td><a href="./code/python3_install.html" target="_blank">自动安装Python</a></td></tr>
-            </table>
+             <h3>自动安装Python 3</h3>
+            <div id='editor' title='安装Python 3'>
+#!/bin/bash
+
+cd /usr/local/src
+wget -c http://www.python.org/ftp/python/3.3.0/Python-3.3.0.tgz
+tar zxf Python-3.3.0.tgz
+cd Python-3.3.0
+./configure
+make all
+make install
+make clean
+make distclean
+/usr/local/bin/python3 -V
+ln -sf /usr/local/bin/python3.3 /usr/bin/python
+echo "安装成功,如果yum无法使用，请修改 /usr/bin/yum 将文件头部的#!/usr/bin/python修改为 #!/usr/bin/python2.6 即可。";
+
+            </div>
 
         </div>
-<script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
         <script>
      var editor = ace.edit("editor");
     editor.setTheme("ace/theme/visual_studio");
