@@ -136,18 +136,14 @@ yum install nginx
 #start nginx
 service nginx start                   
             </div>
-            <h3>插件编写</h3>
-            <pre id='editor2' title='插件编写'>
-                $.fn.wk_tab = function(){
-                    $(this).find(".wk-menu li").click(function(){
-                        $(this).closest(".wk-tab").find(".active").removeClass("active");
-                        $(this).addClass("active").closest(".wk-tab").find("div[name="+$(this).attr("name")+"]").addClass("active");
-                    });
-                }
-                $(".wk-tab").wk_tab();
-            </pre>
+
         </div>
-
-
+<script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+     var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/visual_studio");
+    editor.getSession().setMode("ace/mode/sh");
+    editor.resize();
+        </script>
     </body>
 </html>
