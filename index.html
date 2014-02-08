@@ -50,6 +50,8 @@
                 font-size: 17px;
                 text-indent: 40px;
                 overflow: hidden;
+                box-shadow: 1px 1px 33px 10px rgb(245, 245, 245);
+                border: 1px solid rgb(204, 204, 204);
             }
             .wk-tab-content div{
                 display: none;
@@ -57,6 +59,7 @@
             .wk-tab-content .active{
                 display: block;
             }
+            .wk-tab .wk-menu{background-color: rgb(255, 250, 250);box-shadow: 1px 1px 33px 10px rgb(245, 245, 245);border: 1px solid rgb(204, 204, 204);}
             /**wk-bar**/
             .wk-bar{
                 width: 100%;
@@ -78,12 +81,13 @@
                 clear: both;
                 height: 46px;
             }
+            .wk-menu li:first-child a{font-family: 'Artifika',"Microsoft Yahei";font-size: 17px;}
             .wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
             .wk-menu li:hover,.wk-menu .active{background-color: rgb(40, 159, 220);}
-            .wk-menu li:hover a,.wk-menu .active a{display:block;color:white;}
+            .wk-menu li:hover a,.wk-menu .active a{display:block;color:white;font-weight: bold;font-family: 'Artifika',"Microsoft Yahei";}
             .wk-menu li ul{display:none;}
             .wk-menu li:hover ul{display:block;}
-            .wk-menu li ul{position:absolute;left:0;top:42px;width:150px;}
+            .wk-menu li ul{position:absolute;left:0;top:42px;min-width:150px;}
             .wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
             .wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
         </style>
@@ -106,6 +110,8 @@
         <header class="wk-bar">
         <ul class="wk-menu">
             <li  class="active"><a href=""> Book Said </a></li>
+            <li><a href="javascript:void(0);">计算机科学</a>
+            </li>
             <li><a href="javascript:void(0);">系统架构</a>
             </li>
             <li><a href="javascript:void(0);">前端开发</a>
@@ -114,16 +120,29 @@
                     <li> <a href="">Javascript</a></li>
                 </ul>
             </li>
-            <li><a href="javascript:void(0);">后台开发 </a>
+            <li><a href="javascript:void(0);">后台脚本 </a>
                 <ul>
                     <li> <a href="">PHP</a></li>
                 </ul>
             </li>
-            <li><a href="javascript:void(0);">数据库 </a>
+            <li><a href="javascript:void(0);">数据存储 </a>
                 <ul>
                     <li> <a href="">Mysql</a></li>
                     <li> <a href="">Memcache</a></li>
                     <li> <a href="">Redis</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">服务器 </a>
+                <ul>
+                    <li> <a href="">Nginx</a></li>
+                    <li> <a href="">Apache</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">自动化运维</a>
+                <ul>
+                    <li> <a href="documents/yunwei/structure.jpg">概念</a></li>
+                    <li> <a href="">Nginx+PHP+Mysql</a></li>
+                    <li> <a href="">Apache+PHP+Mysql</a></li>
                 </ul>
             </li>
             <li><a href="javascript:void(0);">开发工具</a>
@@ -134,6 +153,7 @@
             <li><a href="javascript:void(0);">项目</a>
                 <ul>
                     <li> <a href="projects/wk_ui">WK-UI</a></li>
+                    <li> <a href="projects/wk_ide">WK-IDE</a></li>
                 </ul>
             </li>
         </ul>
@@ -161,12 +181,12 @@
                     <div name="wk-tab-6"><img src="documents/yunwei/structure.jpg" width="700" align="left"></div>
                 </div>
         <ul class="wk-menu">
-            <li  class=" active" name="wk-tab-1"><a href="javascript:void(0);"> jQuery</a></li>
-            <li name="wk-tab-2"><a href="javascript:void(0);">Mysql </a></li>
-            <li name="wk-tab-3"><a href="javascript:void(0);">CSS</a></li>
-            <li name="wk-tab-4"><a href="javascript:void(0);">Linux Shell </a></li>
-            <li name="wk-tab-5"><a href="javascript:void(0);">PHP </a></li>
-            <li name="wk-tab-6"><a href="javascript:void(0);">自动化运维 </a></li>
+            <li  class=" active" name="wk-tab-1"><a href="javascript:void(0);"> 技术门户</a></li>
+            <li name="wk-tab-2"><a href="javascript:void(0);">前端资源 </a></li>
+            <li name="wk-tab-3"><a href="javascript:void(0);">后台资源</a></li>
+            <li name="wk-tab-4"><a href="javascript:void(0);">服务器资源</a></li>
+            <li name="wk-tab-5"><a href="javascript:void(0);">项目架构资源 </a></li>
+            <li name="wk-tab-6"><a href="javascript:void(0);">计算机理论资源 </a></li>
         </ul>
               
             </div>
