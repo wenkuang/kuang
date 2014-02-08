@@ -102,40 +102,31 @@
         </script>
     </head>
     <body >
-        <header class="wk-bar">
-        <ul class="wk-menu">
-            <li  class="active"><a href=""> 自动化运维</a></li>
-            <li><a href="javascript:void(0);">Nginx </a>
-            </li>
-            <li><a href="javascript:void(0);">Apache </a>
-            </li>
-            <li><a href="javascript:void(0);">PHP</a>
-            </li>
-            <li><a href="javascript:void(0);">Nodejs </a>
-            </li>
-        </ul>
-            </header>
+
         <div class="wrap">
-             <h3>自动安装Nginx</h3>
+             <h3>Nginx 虚拟主机</h3>
             <div id='editor' title='自动安装Nginx'>#!/bin/bash
-#操作系统: CentOS
 
-#add repository
-releasever=`rpm -qi centos-release | grep Version | awk -F ':' '{print $2}'| awk -F ' ' '{print $1}'`;
-basearch=`arch`;
-echo "[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=0
-enabled=1">/etc/yum.repos.d/nginx.repo
-
-#install nginx
-yum install nginx
-
-#start nginx
-service nginx start     
-
-whereis nginx;ps -ef | grep nginx
+#create virtual host
+read -p "您确定要创建网站?[y/n]:" select;
+if [ "$select" = "y" ]
+then
+read -p "请输入要创建的网站英文名称(需要文件夹命名标准):" site_dir;
+        if [ -a "/sites/$site_dir" ]
+        then
+                echo "文件夹已经存在";
+        fi
+        if [ $site_dir = "" ]
+        then
+                echo "您未输入网站名称";#需要判断网站是否已经存在
+        else
+                mkdir -p /sites/$site_dir;
+                mkdir -p /var/log/nginx/$site_dir;
+                echo "hi,this is $site_dir">/sites/$site_dir/index.html
+        fi
+else
+echo "nothing to do ";
+fi
             </div>
 
         </div>
