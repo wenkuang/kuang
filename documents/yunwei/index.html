@@ -118,9 +118,8 @@
             </header>
         <div class="wrap">
              <h3>自动安装Nginx</h3>
-            <div id='editor' title='自动安装Nginx'>
-#!/bin/bash
-
+            <div id='editor' title='自动安装Nginx'>#!/bin/bash
+#操作系统: CentOS
 #add repository
 releasever=`rpm -qi centos-release | grep Version | awk -F ':' '{print $2}'| awk -F ' ' '{print $1}'`;
 basearch=`arch`;
