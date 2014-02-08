@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Book Said</title>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+        <style>
+            body {
+                margin: 0 auto;
+                font-size: 100%;
+                font-family: 'Artifika', serif,"Microsoft Yahei";
+                color: black;
+                background: white; 
+
+            }
+            @font-face {
+                font-family: 'Artifika';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Artifika Medium'), local('Artifika-Medium'), url(lib/fonts/Artifika.woff) format('woff');
+            }
+            h2 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            a{
+
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-family:"Microsoft Yahei";
+            }
+            table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
+            th{text-align:left;}
+            th,td{border:1px solid #ccc;padding:8px 18px;}
+            .wrap{width:90%;margin:0 auto;margin-top:60px;}
+            .left,.right{width:49%;float:left;}
+            /**wk-code**/
+            pre.wk-code {font-family: consolas;
+                         
+            }
+            /**wk-tab**/
+            .wk-tab-content{
+                padding:10px 5px;
+                height:450px;
+                padding: 10px 5px;
+                height: 450px;
+                font-family: "Microsoft Yahei";
+                line-height: 33px;
+                font-size: 17px;
+                text-indent: 40px;
+                overflow: hidden;
+            }
+            .wk-tab-content div{
+                display: none;
+            }
+            .wk-tab-content .active{
+                display: block;
+            }
+            /**wk-bar**/
+            .wk-bar{
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0px;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(223, 223, 223);
+                border-top: none;
+                box-shadow: 1px 1px 33px 2px rgb(250, 248, 248);
+                z-index:999999;
+            }
+            /**wk-menu**/
+            .wk-menu{margin:0 auto;}
+            .wk-menu,.wk-menu ul{
+                list-style-type: none;
+                padding: 0;
+                clear: both;
+                height: 46px;
+            }
+            .wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
+            .wk-menu li:hover,.wk-menu .active{background-color: rgb(40, 159, 220);}
+            .wk-menu li:hover a,.wk-menu .active a{display:block;color:white;}
+            .wk-menu li ul{display:none;}
+            .wk-menu li:hover ul{display:block;}
+            .wk-menu li ul{position:absolute;left:0;top:42px;width:150px;}
+            .wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
+            .wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
+        </style>
+
+        <script>
+            // We really want to disable
+            window.open = function() {
+            };
+            window.alert = function() {
+            };
+            window.print = function() {
+            };
+            window.prompt = function() {
+            };
+            window.confirm = function() {
+            };
+        </script>
+    </head>
+    <body >
+
+        <div class="wrap">
+             <h3>Nginx 虚拟主机</h3>
+            <div id='editor' title='自动安装Nginx'>#!/bin/bash
+
+#create virtual host
+read -p "您确定要创建网站?[y/n]:" select;
+if [ "$select" = "y" ]
+then
+read -p "请输入要创建的网站英文名称(需要文件夹命名标准):" site_dir;
+        if [ -a "/sites/$site_dir" ]
+        then
+                echo "文件夹已经存在";
+        fi
+        if [ $site_dir = "" ]
+        then
+                echo "您未输入网站名称";
+        else
+                mkdir -p /sites/$site_dir;
+                mkdir -p /var/log/nginx/$site_dir;
+                echo "hi,this is $site_dir">/sites/$site_dir/index.html
+
+cat>>/etc/nginx/conf.d/$site_dir.conf&lt;&lt;EOF'#这里前面和后面都不能有空格'
+"server {
+    listen       80;
+    server_name  localhost;
+    access_log  /var/log/nginx/log/host.access.$site_dir.log  main;
+    location / {
+        root   /sites/$site_dir;
+        index  index.html index.htm;
+    }
+    error_page  404              /404.html;
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+}"
+EOF
+        fi
+else
+echo "nothing to do ";
+fi
+            </div>
+
+        </div>
+<script src="../../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+     var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/javascript");
+    editor.getSession().setMode("ace/mode/sh");
+    editor.resize();
+        </script>
+    </body>
+</html>
