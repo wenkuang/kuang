@@ -123,6 +123,30 @@ read -p "请输入要创建的网站英文名称(需要文件夹命名标准):" 
                 mkdir -p /sites/$site_dir;
                 mkdir -p /var/log/nginx/$site_dir;
                 echo "hi,this is $site_dir">/sites/$site_dir/index.html
+
+cat>>/etc/nginx/conf.d/$site_dir.conf<<EOF'#这里前面和后面都不能有空格'
+"server {
+    listen       80;\n
+    server_name  localhost;
+    access_log  /var/log/nginx/log/host.access.$site_dir.log  main;
+    location / {
+        root   /sites/$site_dir;
+        index  index.html index.htm;
+    }
+    error_page  404              /404.html;
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+}"
+EOF
         fi
 else
 echo "nothing to do ";
