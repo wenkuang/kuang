@@ -14,12 +14,12 @@
                 background: white; 
 
             }
-/*            @font-face {
+            @font-face {
                 font-family: 'Artifika';
                 font-style: normal;
                 font-weight: 400;
                 src: local('Artifika Medium'), local('Artifika-Medium'), url(lib/fonts/Artifika.woff) format('woff');
-            }*/
+            }
             h2 {
                 font-size: 1.8em;
                 letter-spacing: 2px;
@@ -110,7 +110,7 @@
     <body >
         <header class="wk-bar">
         <ul class="wk-menu">
-            <li  class="active"><a href=""> <span class="animated bounceOutLeft">Book</span><span class="animated bounceOutLeft">Said</span></a></li>
+            <li  class="active"><a href=""> <span class="animated fadeInRightBig">Book</span><span class="animated bounceOutLeft">Said</span></a></li>
             <li><a href="javascript:void(0);">计算机科学</a>
             </li>
             <li><a href="javascript:void(0);">系统架构</a>
@@ -254,7 +254,6 @@
 <!--            <div style="clear:both;"></div>-->
         </div>
 
-<script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
         <script>
             $.fn.wk_tab = function(){
                 $(this).find(".wk-menu li").click(function(){
@@ -263,10 +262,6 @@
                 });
             }
             $(".wk-tab").wk_tab();
- var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/github");
-    editor.getSession().setMode("ace/mode/php");
-    editor.resize();
         </script>
 
     </body>
