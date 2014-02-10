@@ -34,7 +34,6 @@
             th,td{border:1px solid #ccc;padding:8px 18px;}
             .wrap{width:90%;margin:0 auto;margin-top:60px;}
             .left,.right{width:49%;float:left;}
-            #editor{width:100%;height: 300px;}
             /**wk-code**/
             pre.wk-code {font-family: consolas;
                          
@@ -117,19 +116,25 @@
         </ul>
             </header>
         <div class="wrap">
-            <table>
-                <tr><th colspan="2" width="80">Nginx</th></tr>
-                <tr><td>1</td><td><a href="./code/nginx_install.html" target="_blank">自动安装Nginx</a></td></tr>
-                <tr><td>2</td><td><a href="./code/nginx_virtual_host.html" target="_blank">自动创建网站</a></td></tr>
-                <tr><th colspan="2" width="80">Python</th></tr>
-                <tr><td>1</td><td><a href="./code/python3_install.html" target="_blank">自动安装Python</a></td></tr>
-                <tr><th colspan="2" width="80">NodeJS</th></tr>
-                <tr><td>1</td><td><a href="./code/nodejs_install.html" target="_blank">自动安装Nodejs</a></td></tr>
-                tr><td>1</td><td><a href="./code/nodebb_install.html" target="_blank">自动安装Nodebb</a></td></tr>
-            </table>
+             <h3>自动安装NodeBB</h3>
+            <div id='editor' title='自动安装Nginx'>#!/bin/bash
+#升级Python版本到2.7+
+  
+#安装依赖软件
+rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+sudo yum install git npm redis ImageMagick --enablerepo=epel
+redis-server &; redis-cli &;
+
+#安装nodebb
+git clone git://github.com/designcreateplay/NodeBB.git nodebb
+cd nodebb/
+npm install
+node app --setup	#需要交互输入设置
+./nodebb start
+            </div>
 
         </div>
-<script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
         <script>
      var editor = ace.edit("editor");
     editor.setTheme("ace/theme/visual_studio");
