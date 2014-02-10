@@ -266,6 +266,18 @@ height: 100%;line-height: 400px;height:400px;font-family: 'Artifika','Microsoft 
                 });
             }
             $(".wk-tab").wk_tab();
+            function launchFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.msRequestFullscreen){ 
+    element.msRequestFullscreen();  
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullScreen();
+  }
+}
+launchFullscreen(document.documentElement); 
         </script>
 
     </body>
