@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Book Said</title>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+        <style>
+            body {
+                margin: 0 auto;
+                font-size: 100%;
+                font-family: 'Artifika', serif,"Microsoft Yahei";
+                color: black;
+                background: white; 
+
+            }
+            @font-face {
+                font-family: 'Artifika';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Artifika Medium'), local('Artifika-Medium'), url(lib/fonts/Artifika.woff) format('woff');
+            }
+            h2 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            a{
+
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-family:"Microsoft Yahei";
+            }
+            table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
+            th{text-align:left;}
+            th,td{border:1px solid #ccc;padding:8px 18px;}
+            .wrap{width:90%;margin:0 auto;margin-top:60px;}
+            .left,.right{width:49%;float:left;}
+            /**wk-code**/
+            pre.wk-code {font-family: consolas;
+                         
+            }
+            /**wk-tab**/
+            .wk-tab-content{
+                padding:10px 5px;
+                height:450px;
+                padding: 10px 5px;
+                height: 450px;
+                font-family: "Microsoft Yahei";
+                line-height: 33px;
+                font-size: 17px;
+                text-indent: 40px;
+                overflow: hidden;
+            }
+            .wk-tab-content div{
+                display: none;
+            }
+            .wk-tab-content .active{
+                display: block;
+            }
+            /**wk-bar**/
+            .wk-bar{
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0px;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(223, 223, 223);
+                border-top: none;
+                box-shadow: 1px 1px 33px 2px rgb(250, 248, 248);
+                z-index:999999;
+            }
+            /**wk-menu**/
+            .wk-menu{margin:0 auto;}
+            .wk-menu,.wk-menu ul{
+                list-style-type: none;
+                padding: 0;
+                clear: both;
+                height: 46px;
+            }
+            .wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
+            .wk-menu li:hover,.wk-menu .active{background-color: rgb(40, 159, 220);}
+            .wk-menu li:hover a,.wk-menu .active a{display:block;color:white;}
+            .wk-menu li ul{display:none;}
+            .wk-menu li:hover ul{display:block;}
+            .wk-menu li ul{position:absolute;left:0;top:42px;width:150px;}
+            .wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
+            .wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
+        </style>
+
+        <script>
+            // We really want to disable
+            window.open = function() {
+            };
+            window.alert = function() {
+            };
+            window.print = function() {
+            };
+            window.prompt = function() {
+            };
+            window.confirm = function() {
+            };
+        </script>
+    </head>
+    <body >
+
+        <div class="wrap">
+             <h3>自动安装Vsftp</h3>
+            <div id='editor' title='安装Python 3'>
+#! /bin/bash
+#http://repoforge.org/use/
+
+echo "Please input php version > 5.3.0:"
+read -p "(Default php version: 5.3.10):" phpversion
+if [ "$phpversion" = "" ]; then
+	phpversion="5.3.10"
+fi
+
+echo "Please input php install where:"
+read -p "(Default php install: /usr/local):" phpinstalldir
+if [ "$phpinstalldir" = "" ]; then
+	phpinstalldir="/usr/local"
+fi
+
+
+if [ -s $phpinstalldir/php-${phpversion} ]; then
+	echo "$phpinstalldir/php-$phpversion dir already exist;please move $phpinstalldir/php-$phpversion to another where or delete $phpinstalldir/php-$phpversion then continue"
+	exit
+fi
+
+if [ ! -f rpmforge-release-0.5.2-2.el6.rf.i686.rpm ];then
+	wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+fi
+rpm -ivh rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+
+if [ ! -f libiconv-1.13.1.tar.gz ];then
+	wget http://public.157.img1001.com/web/libiconv-1.13.1.tar.gz
+fi
+rm -rf libiconv-1.13.1
+tar zxvf libiconv-1.13.1.tar.gz
+cd libiconv-1.13.1
+./configure --prefix=$phpinstalldir/libiconv
+make
+make install
+ldconfig
+cd ..
+
+yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel libmcrypt libmcrypt-devel mhash mhash-devel libtool-ltdl-devel
+rm -rf php-${phpversion} ${phpversion}.tar.gz
+if [ ! -f php-${phpversion}.tar.gz ];then
+	wget http://cn.php.net/get/php-${phpversion}.tar.gz/from/cn2.php.net/mirror
+fi
+tar zxvf php-${phpversion}.tar.gz
+cd php-${phpversion}
+./configure --prefix=${phpinstalldir}/php-${phpversion} --with-config-file-path=${phpinstalldir}/php-${phpversion}/etc --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --enable-fpm --enable-static --enable-maintainer-zts --enable-zend-multibyte --enable-inline-optimization --enable-sockets --enable-wddx --enable-zip --enable-calendar --enable-bcmath --enable-soap --with-zlib --with-iconv-dir=$phpinstalldir/libiconv --with-gd --with-xmlrpc --enable-mbstring --without-sqlite --with-curl --enable-ftp --with-mcrypt  --with-freetype-dir --with-jpeg-dir --with-png-dir --disable-ipv6 --disable-debug
+make ZEND_EXTRA_LIBS='-liconv'
+make install
+            </div>
+
+        </div>
+<script src="../../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+     var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/visual_studio");
+    editor.getSession().setMode("ace/mode/sh");
+    editor.resize();
+        </script>
+    </body>
+</html>
