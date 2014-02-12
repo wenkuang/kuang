@@ -4,7 +4,7 @@
 body {
     margin: 0 auto;
     font-size: 100%;
-    font-family: serif,"Microsoft Yahei";
+    font-family: "Microsoft Yahei";
 }
 h2 {
     font-size: 1.8em;
@@ -21,17 +21,17 @@ a{
 table{
     margin:0 auto;
     border:1px solid #ccc; 
-      border-collapse:collapse;
-      margin-top:20px;
-      width:90%;
-      clear:right;
-      box-shadow: 1px 1px 15px 10px rgba(255, 247, 247, 0.81);
+    border-collapse:collapse;
+    margin-top:20px;
+    width:90%;
+    clear:right;
+    box-shadow: 1px 1px 15px 10px rgba(255, 247, 247, 0.81);
 }
 th{
     text-align:left;
-   background-color:rgb(40, 159, 220);
-   background-color: rgb(245, 245, 245);
-   border-bottom: 1px solid rgb(204, 204, 204);
+    background-color:rgb(40, 159, 220);
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 th,td{padding:8px 18px;}
 
@@ -80,7 +80,7 @@ th,td{padding:8px 18px;}
     border-bottom: 1px solid #ccc;
     text-align: center;
 }
-.wk-menu li{position:relative;display:block;float:left;padding:7px 18px;}
+.wk-menu li{position:relative;display:block;float:left;padding:13px 18px;}
 .wk-menu li:hover,.wk-menu .active{background-color: rgb(40, 159, 220);}
 .wk-menu li:hover a,.wk-menu .active a{display:block;color:white;font-weight: bold;}
 .wk-menu li ul{display:none;}
@@ -104,4 +104,33 @@ th,td{padding:8px 18px;}
     top:0;
 }
 
+/*左侧导航菜单*/
+.wk-menu.vertical-full{
+    border-right: 1px solid rgb(204, 204, 204);
+    box-shadow: 1px 1px 9px 1px rgb(234, 232, 236);
+    height:100%;
+}
 /*表单*/
+textarea{border: 1px solid rgb(231, 231, 231);}
+input[type=button]{padding: 6px 10px;}
+
+/*文档页面*/
+.wk-page-doc{
+    margin-left: 16%;
+    padding-top: 40px;
+}
+
+.wk-page-doc h3{padding-left:30px;}
+.wk-doc  .active {border-bottom: 1px dashed rgb(204, 204, 204);}
+.wk-doc .wk-menu li:hover, .wk-doc  .active {
+    background-color: rgb(245, 245, 245);
+    color:black;
+    border-bottom:1px solid #ccc;
+}
+.wk-doc .wk-menu li:hover a,.wk-doc .active a{color:black;}
+.article{
+    text-indent: 40px;
+    font-size: 17px;
+    padding: 10px;
+    line-height: 30px;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Book Said</title>
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+        <link rel="stylesheet" href="../../projects/wk_ui/wk-release.css">
+        <link rel="stylesheet" href="../../lib/animate.css" >
+    </head>
+    <body class="wk-doc">
+        <ul class="wk-menu vertical vertical-full" style="">
+            <li class="active"><a href="javascript:void(0);">Node JS </a>
+            </li>
+            <li><a href="#install">Install NodeJS</a>                                
+            </li>
+            <li><a href="#file">demo2</a></li>
+            <li><a href="javascript:void(0);">demo3</a></li>
+            <li><a href="javascript:void(0);">demo4</a></li>
+            <li><a href="javascript:void(0);">demo5</a></li>
+            <li><a href="javascript:void(0);">demo6</a></li>
+            <li><a href="javascript:void(0);">demo7</a>
+            </li>
+        </ul>
+        <div class="wk-page-doc">
+            <h3 ><a name="about">关于Node JS</a></h3>
+            <div class="article">
+                Node.js 是一个让 JavaScript 运行在服务端的开发平台<br/>
+                <dl>
+                    <dt><b>特点</b></dt>
+                    <dd>本身自带服务器模块，不需要Nginx, Apache等服务器软件</dd>
+                </dl>
+            </div>
+            <h3 ><a name="install">安装Node JS</a></h3>
+            <div id="editor" style="height:200px;">#!/bin/bash
+#需要先安装python 2.7+
+rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+sudo yum install npm --enablerepo=epel
+            </div>
+            <h3 ><a name="file">文件系统</a></h3>
+            <div id="editor2"  style="height:300px;">#!/bin/bash
+#需要先安装python 2.7+
+rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+sudo yum install npm --enablerepo=epel
+            </div>
+        </div>
+                <script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+     var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/visual_studio");
+    editor.getSession().setMode("ace/mode/sh");
+    editor.resize();
+         var editor = ace.edit("editor2");
+    editor.setTheme("ace/theme/visual_studio");
+    editor.getSession().setMode("ace/mode/sh");
+    editor.resize();
+        </script>
+    </body>
+</html>
