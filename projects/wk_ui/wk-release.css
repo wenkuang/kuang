@@ -120,7 +120,11 @@ input[type=button]{padding: 6px 10px;}
     padding-top: 40px;
 }
 
-.wk-page-doc h3{padding-left:30px;}
+.wk-page-doc h3{
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 10px 30px;
+}
 .wk-doc  .active {border-bottom: 1px dashed rgb(204, 204, 204);}
 .wk-doc .wk-menu li:hover, .wk-doc  .active {
     background-color: rgb(245, 245, 245);
@@ -132,5 +136,8 @@ input[type=button]{padding: 6px 10px;}
     text-indent: 40px;
     font-size: 17px;
     padding: 10px;
-    line-height: 30px;
+    line-height: 35px;
+}
+.wk-page-doc section{
+    margin-bottom:50px;
 }

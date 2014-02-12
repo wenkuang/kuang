@@ -22,37 +22,163 @@
             </li>
         </ul>
         <div class="wk-page-doc">
-            <h3 ><a name="about">关于Node JS</a></h3>
+            <section>
+            <h3 ><a name="about">一、关于Node JS</a></h3>
             <div class="article">
                 Node.js 是一个让 JavaScript 运行在服务端的开发平台<br/>
                 <dl>
                     <dt><b>特点</b></dt>
-                    <dd>本身自带服务器模块，不需要Nginx, Apache等服务器软件</dd>
+                    <dd>1. 本身自带服务器模块，不需要Nginx, Apache等服务器软件</dd>
+                    <dd>2. NodeJS 运行在服务器端，没有浏览器端的兼容问题</dd>
+                    <dd>3. Node.js 使用的是单线程模型，对于所有 I/O 都采用
+异步式的请求方式，避免了频繁的上下文切换。Node.js 在执行的过程中会维护一个事件队
+列，程序在执行时进入事件循环等待下一个事件到来，每个异步式 I/O 请求完成后会被推送
+到事件队列，等待程序进程进行处理。 </dd>
                 </dl>
             </div>
-            <h3 ><a name="install">安装Node JS</a></h3>
-            <div id="editor" style="height:200px;">#!/bin/bash
-#需要先安装python 2.7+
+            </section>
+            <section>
+            <h3 ><a name="install">二、安装Node JS</a></h3>
+            <div class="editor" lang='sh' style="height:300px;">#!/bin/bash
+#操作系统: CentOS ,  需要先安装python 2.7+
 rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 sudo yum install npm --enablerepo=epel
+#node代码修改后需要重新启动服务器，调试不便；安装supervisor可以自动重启 ; 
+#运行方式: supervisor index.js ; 当代码被改动时会自动重启
+sudo npm install -g supervisor
             </div>
-            <h3 ><a name="file">文件系统</a></h3>
-            <div id="editor2"  style="height:300px;">#!/bin/bash
-#需要先安装python 2.7+
-rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-sudo yum install npm --enablerepo=epel
+            </section>
+            <section>
+            <h3 ><a name="file">三、命令行下的Node JS</a></h3>
+            <div class="editor" lang='javascript'  style="height:300px;">//运行node脚本
+// 1. 直接输入 node 并回车，即可进入Node命令行环境
+node 
+// 2 . node --help 
+node -e "console.log('hello world')";
             </div>
+            </section>
+            <section>
+            <h3 ><a name="file">四、搭建HTTP服务器</a></h3>
+            <div class="editor" lang='javascript'  style="height:500px;">//index.js 
+//调用http模块
+var http = require('http'); 
+//创建服务器
+http.createServer(function(request, response) { 
+    //响应信息头
+    response.writeHead(200, {'Content-Type': 'text/html'}); 
+    //响应信息内容
+    response.write('<h1>Node.js</h1>'); 
+    //响应结束
+    response.end('<p>Hello World</p>'); 
+}).listen(1234); 
+console.log("在命令行下显示内容，端口1234; 浏览器下访问方式: http://ip:1234");
+            </div>
+            </section>
+            <section>
+            <h3 ><a name="file">四、创建模块</a></h3>
+            <div class="editor" lang='javascript'  style="height:750px;">/**
+一个文件就是一个模块
+Node.js 提供了 exports 和 require 两个对象，其中 exports 是模块公开的接口，
+require 用于从外部获取一个模块的接口，即所获取模块的 exports 对象。
+**/
+//module.js 
+var name; 
+exports.setName = function(thyName) { 
+ name = thyName; 
+}; 
+exports.sayHello = function() { 
+ console.log('Hello ' + name); 
+}; 
+
+//在同一目录下创建 getmodule.js，内容是： 
+var myModule = require('./module'); 
+myModule.setName('world'); 
+myModule.sayHello(); 
+//运行node getmodule.js，结果是： 
+Hello world 
+            </div>
+            </section>
+            <section>
+            <h3 ><a name="file">四、创建包</a></h3>
+            <div class="article">包 是一个目录，类似于代码库，是模块的集合:
+                <dl>
+                    <dt>目录结构:</dt>
+                    <dd>  package.json : 包说明文件</dd>
+                    <dd>bin/ ： 二进制文件</dd>
+                    <dd>lib/ : javascript文件</dd>
+                    <dd>doc/ : 文档</dd>
+                    <dd>test : 单元测试</dd>
+                </dl>
+            </div>
+            <div class="editor" lang='javascript'  style="height:750px;">//创建包: hello
+//创建文件夹: hello
+//在文件夹内创建入口文件: index.js (也可以在package.json的main字段配置入口文件，默认index.js)
+exports.hello = function() { 
+ console.log('Hello.'); 
+};
+//在其它文件内调用包
+var hello = require('./hello'); 
+hello.hello(); 
+/**
+package.json 配置项
+    name：包的名称，必须是唯一的，由小写英文字母、数字和下划线组成，不能包含空格。 
+    description：包的简要说明。 
+    version：符合语义化版本识别
+    keywords：关键字数组，通常用于搜索。 
+    maintainers：维护者数组，每个元素要包含 name、email （可选）、web （可选）字段。 
+    contributors：贡献者数组，格式与maintainers相同。包的作者应该是贡献者数组的第一个元素。 
+    bugs：提交bug的地址，可以是网址或者电子邮件地址。 
+    licenses：许可证数组，每个元素要包含 type （许可证的名称）和 url （链接到许可证文本的地址）字段。 
+    repositories：仓库托管地址数组，每个元素要包含 type （仓库的类型，如 git ）、url （仓库的地址）和 path （相对于仓库的路径，可选）字段。 
+**/
+            </div>
+            
+            </section>
+            <section>
+            <h3 ><a name="file">四、npm : Node Package Manager 包管理器</a></h3>
+            <div class="article">
+Node.js包管理器，即npm是 Node.js 官方提供的包管理工具①，它已经成了 Node.js 包的
+标准发布平台，用于 Node.js 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可
+以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。
+            </div>
+            <div class="editor" lang='sh'  style="height:750px;">#默认包安装源: http://npmjs.org
+#安装包： 本地模式安装完后会放到当前目录的node_modules 下；
+#安装分本地模式和全局模式，本地模式即为当前文件夹，全局模式为通用文件夹，
+#本地模式可以灵活使用不同版本，全局模式 会将 包安装到 /usr/local/lib/node_modules/
+#package直接与 /usr/local/bin/关联，所以可以直接在全局调用包命令，如supervistor index.js；
+#本地模式只能使用绝对路径调用
+npm install express  #本地模式
+npm install -g express #全局模式，如果在命令行下使用 最好用这种方式，可在任何地方调用命令
+#全局安装的包不能通过require函数调用，如果本地未安装且想使用权举报，
+#可以用npm link express 连接本地与全局包
+#将本地包连接到全局: 直接在本地包目录下 npm link
+            </div>
+            </section>
+            <section>
+            <h3 ><a name="file">四、发布包</a></h3>
+
+            <div class="editor" lang='sh'  style="height:750px;">#发布包
+#创建文件夹 hello
+npm init #交互式问答创建package.json
+#创建index.js 入口文件
+#交互式创建npm 账号，用户管理包: 
+npm user 
+#查看账号信息
+npm whoami
+#在package.json 目录下发布
+npm publish 
+#在http://search.npmjs.org中查找自己创建的包
+#安装包
+npm install hello
+#更新包： 修改package.json文件的version,并重新npm publish
+#取消发布: 
+npm unpublish
+
+
+            </div>
+            </section>
         </div>
                 <script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-        <script>
-     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/visual_studio");
-    editor.getSession().setMode("ace/mode/sh");
-    editor.resize();
-         var editor = ace.edit("editor2");
-    editor.setTheme("ace/theme/visual_studio");
-    editor.getSession().setMode("ace/mode/sh");
-    editor.resize();
-        </script>
+<script src="../../projects/wk_ui/wk-release.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
