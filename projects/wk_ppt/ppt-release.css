@@ -1,0 +1,36 @@
+/**wk-ppt**/
+html{height:100%;width:100%;}
+body {
+    margin: 0 auto;
+    font-size: 100%;
+    height:100%;width:100%;
+}
+.wk-ppt{ height:100%;width:100%;}
+.wk-ppt-content{
+    height:100%;width:100%;
+    font-family: "Microsoft Yahei";
+    line-height: 33px;
+    font-size: 17px;
+    overflow: hidden;
+}
+.wk-ppt-main{
+    display: none;
+}
+.wk-ppt-content .active{
+    display: block!important;
+}
+.wk-ppt-menu{
+    background-color: rgb(255, 250, 250);
+    box-shadow: 1px 1px 33px 10px rgb(245, 245, 245);
+    border: 1px solid rgb(204, 204, 204);
+    margin:0 auto;
+    position:fixed;
+    left:300px;
+    bottom:50px;
+}
+.wk-ppt-menu li {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 14px 15px;
+}
