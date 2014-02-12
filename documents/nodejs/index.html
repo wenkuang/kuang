@@ -177,6 +177,79 @@ npm unpublish
 
             </div>
             </section>
+            <section>
+            <h3 ><a name="file">四、Node JS 调试</a></h3>
+            <div class="article">
+
+            </div>
+            <div class="editor" lang='sh'  style="height:770px;">#调试
+node debug debug.js
+/**
+调试命令： 在debug模式开启后运行
+    run 执行脚本，在第一行暂停 
+    restart 重新执行脚本 
+    cont, c 继续执行，直到遇到下一个断点 
+    next, n 单步执行 
+    step, s 单步执行并进入函数 
+    out, o 从函数中步出 
+    setBreakpoint(), sb() 在当前行设置断点 
+    setBreakpoint(‘f()’), sb(...) 在函数f的第一行设置断点 
+    setBreakpoint(‘script.js’, 20), sb(...) 在 script.js 的第20行设置断点 
+    clearBreakpoint, cb(...) 清除所有断点 
+    backtrace, bt 显示当前的调用栈 
+    list(5) 显示当前执行到的前后5行代码 
+    watch(expr) 把表达式 expr 加入监视列表 
+    unwatch(expr) 把表达式 expr 从监视列表移除 
+    watchers 显示监视列表中所有的表达式和值 
+    repl 在当前上下文打开即时求值环境 
+    kill 终止当前执行的脚本 
+    scripts 显示当前已加载的所有脚本 
+    version 显示 V8 的版本
+**/
+#使用 node-inspector 在浏览器端调试 Node.js
+npm install -g node-inspector
+node --debug-brk=5858 index.js #连接要调试的文件
+node-inspector
+# 访问： http://127.0.0.1:8080/debug?port=5858
+            </div>
+            </section>
+            <section>
+                <h3>核心模块</h3>
+                <dl>
+                    <dt>http://nodeapi.ucdok.com/#/api/</dt>
+                </dl>
+
+                <div class="editor" lang="javascript">#process : 描述当前 Node.js 进程状态的对象
+
+                </div>
+            </section>
+            <section>
+                <h3>全局对象</h3>
+                <div class="article">
+                    
+                </div>
+                <div class="editor" lang="javascript">
+                    
+                </div>
+            </section>
+                        <section>
+                <h3>全局对象</h3>
+                <div class="article">
+                    
+                </div>
+                <div class="editor" lang="javascript">
+                    
+                </div>
+            </section>
+                        <section>
+                <h3>全局对象</h3>
+                <div class="article">
+                    
+                </div>
+                <div class="editor" lang="javascript">
+                    
+                </div>
+            </section>
         </div>
                 <script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../projects/wk_ui/wk-release.js" type="text/javascript" charset="utf-8"></script>
