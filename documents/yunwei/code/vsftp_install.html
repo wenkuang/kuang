@@ -112,9 +112,17 @@ yum -y install vsftpd
 touch /var/log/vsftpd.log
 chkconfig --list #检查启动情况
 chkconfig --level 2345 vsftpd on #2345对应的是上面对应的0-6项 
+chkconfig vsftpd on #设置开机启动
 service vsftpd start /status /restart/stop
 #配置文件地址
-vi /etc/vsftpd/vsftpd.conf 
+/etc/vsftpd/vsftpd.conf 
+#/etc/vsftpd/user_list
+
+#创建用户
+useradd -d /home/hello hello
+passwd hello
+service vsftpd restart
+#通过ftp客户端连接
             </div>
 
         </div>
