@@ -11,14 +11,6 @@
         <ul class="wk-menu vertical vertical-full" style="">
             <li class="active"><a href="javascript:void(0);">Node JS </a>
             </li>
-            <li><a href="#install">Install NodeJS</a>                                
-            </li>
-            <li><a href="#file">demo2</a></li>
-            <li><a href="javascript:void(0);">demo3</a></li>
-            <li><a href="javascript:void(0);">demo4</a></li>
-            <li><a href="javascript:void(0);">demo5</a></li>
-            <li><a href="javascript:void(0);">demo6</a></li>
-            <li><a href="javascript:void(0);">demo7</a>
             </li>
         </ul>
         <div class="wk-page-doc">
@@ -49,7 +41,7 @@ sudo npm install -g supervisor
             </div>
             </section>
             <section>
-            <h3 ><a name="file">三、命令行下的Node JS</a></h3>
+            <h3 ><a name="command">三、命令行下的Node JS</a></h3>
             <div class="editor" lang='javascript'  style="height:300px;">//运行node脚本
 // 1. 直接输入 node 并回车，即可进入Node命令行环境
 node 
@@ -58,7 +50,7 @@ node -e "console.log('hello world')";
             </div>
             </section>
             <section>
-            <h3 ><a name="file">四、搭建HTTP服务器</a></h3>
+            <h3 ><a name="http">四、搭建HTTP服务器</a></h3>
             <div class="editor" lang='javascript'  style="height:500px;">//index.js 
 //调用http模块
 var http = require('http'); 
@@ -75,7 +67,7 @@ console.log("在命令行下显示内容，端口1234; 浏览器下访问方式:
             </div>
             </section>
             <section>
-            <h3 ><a name="file">四、创建模块</a></h3>
+            <h3 ><a name="module">五、创建模块</a></h3>
             <div class="editor" lang='javascript'  style="height:750px;">/**
 一个文件就是一个模块 
 Node.js 提供了 exports 和 require 两个对象，其中 exports 是模块公开的接口，
@@ -99,7 +91,7 @@ Hello world
             </div>
             </section>
             <section>
-            <h3 ><a name="file">四、创建包</a></h3>
+            <h3 ><a name="package">六、创建包</a></h3>
             <div class="article">包 是一个目录，类似于代码库，是模块的集合:
                 <dl>
                     <dt>目录结构:</dt>
@@ -135,7 +127,7 @@ package.json 配置项
             
             </section>
             <section>
-            <h3 ><a name="file">四、npm : Node Package Manager 包管理器</a></h3>
+            <h3 ><a name="npm">七、npm : Node Package Manager 包管理器</a></h3>
             <div class="article">
 Node.js包管理器，即npm是 Node.js 官方提供的包管理工具①，它已经成了 Node.js 包的
 标准发布平台，用于 Node.js 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可
@@ -155,7 +147,7 @@ npm install -g express #全局模式，如果在命令行下使用 最好用这�
             </div>
             </section>
             <section>
-            <h3 ><a name="file">四、发布包</a></h3>
+            <h3 ><a name="package_publish">八、发布包</a></h3>
 
             <div class="editor" lang='sh'  style="height:750px;">#发布包
 #创建文件夹 hello
@@ -178,7 +170,7 @@ npm unpublish
             </div>
             </section>
             <section>
-            <h3 ><a name="file">四、Node JS 调试</a></h3>
+            <h3 ><a name="debug">九、Node JS 调试</a></h3>
             <div class="article">
 
             </div>
@@ -216,40 +208,15 @@ node-inspector
             <section>
                 <h3>核心模块</h3>
                 <dl>
-                    <dt>http://nodeapi.ucdok.com/#/api/</dt>
+                    <dt>Util</dt>
+                    <dd>util.inspect(obj) :转换对象为字符串</dd>
                 </dl>
 
                 <div class="editor" lang="javascript">#process : 描述当前 Node.js 进程状态的对象
 
                 </div>
             </section>
-            <section>
-                <h3>全局对象</h3>
-                <div class="article">
-                    
-                </div>
-                <div class="editor" lang="javascript">
-                    
-                </div>
-            </section>
-                        <section>
-                <h3>全局对象</h3>
-                <div class="article">
-                    
-                </div>
-                <div class="editor" lang="javascript">
-                    
-                </div>
-            </section>
-                        <section>
-                <h3>全局对象</h3>
-                <div class="article">
-                    
-                </div>
-                <div class="editor" lang="javascript">
-                    
-                </div>
-            </section>
+
         </div>
                 <script src="../../lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../projects/wk_ui/wk-release.js" type="text/javascript" charset="utf-8"></script>

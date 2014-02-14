@@ -91,13 +91,14 @@ th,td{padding:8px 18px;}
 
 /*纵向菜单*/
 .wk-menu.vertical{
-    width:15%;
+    width:18%;
     position:fixed;
     left:0;
     top:0;
 }
 .wk-menu.vertical li {
     float:none;
+    text-align: left;
 }
 .wk-menu.vertical li ul{
     left:100%;
@@ -116,7 +117,7 @@ input[type=button]{padding: 6px 10px;}
 
 /*文档页面*/
 .wk-page-doc{
-    margin-left: 16%;
+    margin-left: 19%;
     padding-top: 40px;
 }
 

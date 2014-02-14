@@ -8,4 +8,9 @@ $(".editor").each(function(index){
    editor.resize();
 })
 
-
+//生成导航
+var nav_html = "";
+$(".wk-page-doc h3 a").each(function(index){
+    nav_html += "<li><a href='#" + $(this).attr("name") + "'>"+ $(this).text() +"</a></li>";
+});
+$(".wk-menu").append(nav_html);
