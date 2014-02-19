@@ -106,6 +106,23 @@
         <div class="wrap">
              <h3>Shell脚本手册</h3>
             <div id='editor' title=''>#!/bin/bash
+#------------创建自定义系统命令--------------------------------
+#在/root/内创建hello文件， 使用shell或其他语言编写内容
+ln -s /root/hello /usr/bin/
+#使用
+hello --help
+#脚本内容
+case "$1" in
+  '--help')
+  echo "help info ";
+;;
+    'start')
+    echo "start to install nginx ----->";
+    yum install nginx
+;;
+*)
+esac
+exit 0;
                 
 #-------------------- 语法 ---------------------------------------
 
