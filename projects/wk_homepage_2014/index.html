@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Book Said</title>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<link rel="stylesheet" href="lib/animate.css" >
+        <style>
+            body {
+                margin: 0 auto;
+                font-size: 100%;
+                font-family: 'Artifika', serif,"Microsoft Yahei";
+                color: black;
+                background: white; 
+
+            }
+            @font-face {
+                font-family: 'Artifika';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Artifika Medium'), local('Artifika-Medium'), url(lib/fonts/Artifika.woff) format('woff');
+            }
+            h2 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            a{
+
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-family:"Microsoft Yahei";
+            }
+            table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
+            th{text-align:left;}
+            th,td{border:1px solid #ccc;padding:8px 18px;}
+            .wrap{width:90%;margin:0 auto;margin-top:60px;}
+            .left,.right{width:49%;float:left;}
+            #editor{width:100%;height: 300px;font-size: 17px;line-height: 24px;font-family: Consolas;}
+            /**wk-code**/
+            pre.wk-code {font-family: consolas;
+                         
+            }
+            /**wk-tab**/
+            .wk-tab-content{
+                padding:10px 5px;
+                height:450px;
+                padding: 10px 5px;
+                height: 450px;
+                font-family: "Microsoft Yahei";
+                line-height: 33px;
+                font-size: 17px;
+                text-indent: 40px;
+                overflow: hidden;
+                box-shadow: 1px 1px 33px 10px rgb(245, 245, 245);
+                border: 1px solid rgb(204, 204, 204);
+            }
+            .wk-tab-main{
+                display: none;
+            }
+            .wk-tab-content .active{
+                display: block!important;
+            }
+            .wk-tab .wk-menu{background-color: rgb(255, 250, 250);box-shadow: 1px 1px 33px 10px rgb(245, 245, 245);border: 1px solid rgb(204, 204, 204);}
+            /**wk-bar**/
+            .wk-bar{
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0px;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(223, 223, 223);
+                border-top: none;
+                box-shadow: 1px 1px 33px 2px rgb(250, 248, 248);
+                z-index:999999;
+            }
+            /**wk-menu**/
+            .wk-menu{margin:0 auto;}
+            .wk-menu,.wk-menu ul{
+                list-style-type: none;
+                padding: 0;
+                clear: both;
+                height: 46px;
+            }
+            .wk-menu li:first-child a{font-family: 'Artifika',"Microsoft Yahei";font-size: 17px;}
+            .wk-menu li{position:relative;display:block;float:left;padding:13px 15px;}
+            .wk-menu li:hover,.wk-menu .active{background-color: rgb(40, 159, 220);}
+            .wk-menu li:hover a,.wk-menu .active a{display:block;color:white;font-weight: bold;font-family: 'Artifika',"Microsoft Yahei";}
+            .wk-menu li ul{display:none;}
+            .wk-menu li:hover ul{display:block;}
+            .wk-menu li ul{position:absolute;left:0;top:42px;min-width:150px;}
+            .wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
+            .wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
+ .wk-article-dl{width:45%;padding-right: 30px;border-right:1px dashed #ccc;float:left;}
+        </style>
+
+        <script>
+            // We really want to disable
+            window.open = function() {
+            };
+            window.alert = function() {
+            };
+            window.print = function() {
+            };
+            window.prompt = function() {
+            };
+            window.confirm = function() {
+            };
+        </script>
+    </head>
+    <body >
+        <header class="wk-bar">
+        <ul class="wk-menu">
+            <li  class="active"><a href="javascript:launchFullscreen(document.documentElement); "> <span class="animated fadeInRightBig">Book</span><span class="animated fadeInRightBig">Said</span></a></li>
+            <li><a href="javascript:void(0);">计算机科学</a>
+            </li>
+            <li><a href="javascript:void(0);">系统架构</a>
+            </li>
+            <li><a href="javascript:void(0);">前端开发</a>
+                <ul>
+                    <li> <a href="documents/jquery" target="_blank">jQuery</a></li>
+                    <li> <a href="http://msdn.microsoft.com/zh-cn/library/d1et7k7c(v=vs.94).aspx" target="_blank">Javascript</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">后台脚本 </a>
+                <ul>
+                    <li> <a href="documents/php" target="_blank">PHP</a></li>
+                    <li> <a href="documents/shell" target="_blank">Shell</a></li>
+                    <li> <a href="http://docs.python.org/3/tutorial/index.html" target="_blank">Python</a></li>
+                    <li> <a href="documents/nodejs/" target="_blank">Nodejs</a></li>
+                    <li> <a href=""  target="_blank">C & C++</a></li>
+                    <li> <a href="" target="_blank">C#</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">数据存储 </a>
+                <ul>
+                    <li> <a href="" target="_blank">Mysql</a></li>
+                    <li> <a href="" target="_blank">Memcache</a></li>
+                    <li> <a href="" target="_blank">Redis</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">服务器 </a>
+                <ul>
+                    <li> <a href="" target="_blank">Nginx</a></li>
+                    <li> <a href="" target="_blank">Apache</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">自动化运维</a>
+                <ul>
+                    <li> <a href="documents/yunwei/" target="_blank">首页</a></li>
+                     <li> <a href="documents/yunwei/structure.jpg" target="_blank">架构图</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">开发工具</a>
+                <ul>
+                    <li> <a href="" target="_blank">Github</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">项目</a>
+                <ul>
+                    <li> <a href="projects/wk_ui" target="_blank">WK-UI</a></li>
+                    <li> <a href="projects/wk_ide" target="_blank">WK-IDE</a></li>
+                    <li> <a href="projects/wk_ppt" target="_blank">WK-PPT</a></li>
+                </ul>
+            </li>
+        </ul>
+            </header>
+        <div class="wrap">
+          <div class="wk-tab">
+             <div class="wk-tab-content" style="height:auto;">
+                 <div  class="wk-tab-main active" name="wk-tab-1">
+                     <div class="animated " style="">
+                         <dl class="wk-article-dl">
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                             </dd>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                             </dd>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
+                             </dd>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
+                             </dd>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                         </dl>
+                                                  <dl class="wk-article-dl">
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                             </dd>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                             </dd>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
+                             </dd>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
+                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
+                             </dd>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
+                         </dl>
+                     </div>
+                 </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $.fn.wk_tab = function(){
+                $(this).find(".wk-menu li").click(function(){
+                    $(this).closest(".wk-tab").find(".active").removeClass("active");
+                    $(this).addClass("active").closest(".wk-tab").find("div[name="+$(this).attr("name")+"]").addClass("active");
+                });
+            }
+            $(".wk-tab").wk_tab();
+function launchFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.msRequestFullscreen){ 
+    element.msRequestFullscreen();  
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullScreen();
+  }
+}
+
+        </script>
+
+    </body>
+</html>
