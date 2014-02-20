@@ -3,15 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Book Said</title>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<link rel="stylesheet" href="lib/animate.css" >
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+        <link rel="stylesheet" href="lib/animate.css" >
         <style>
             body {
                 margin: 0 auto;
                 font-size: 100%;
-                font-family: 'Artifika', serif,"Microsoft Yahei";
+                font-family: ;
                 color: black;
-                background: white; 
+                background: rgba(223, 223, 223, 0.67); 
 
             }
             @font-face {
@@ -33,12 +33,12 @@
             table{border:1px solid #ccc; border-collapse:collapse;margin-top:20px;width:90%;clear:right;}
             th{text-align:left;}
             th,td{border:1px solid #ccc;padding:8px 18px;}
-            .wrap{width:90%;margin:0 auto;margin-top:60px;}
+
             .left,.right{width:49%;float:left;}
             #editor{width:100%;height: 300px;font-size: 17px;line-height: 24px;font-family: Consolas;}
             /**wk-code**/
             pre.wk-code {font-family: consolas;
-                         
+
             }
             /**wk-tab**/
             .wk-tab-content{
@@ -91,7 +91,123 @@
             .wk-menu li ul{position:absolute;left:0;top:42px;min-width:150px;}
             .wk-menu ul li:first-child,.wk-menu ul li{float:none;background-color:rgb(40, 159, 220);border:none;}
             .wk-menu ul li:first-child:hover,.wk-menu ul li:hover a{background-color: rgb(40, 159, 220);color:white;}
- .wk-article-dl{width:45%;padding-right: 30px;border-right:1px dashed #ccc;float:left;}
+            ul{list-style-type: none;}
+            .logo-bar{
+                font-family: 'Microsoft Yahei';
+                border-bottom:1px dashed #ccc;
+                background-color:white;
+                width: 90%;
+                margin:0 auto;
+                margin-bottom: 10px;
+                color:black;
+                padding-left:30px;
+                line-height:55px;
+                height:55px;   
+            }
+            .wrap{
+                width:92%;
+                margin:0 auto;
+                margin-top:10px;
+                background-color:white;
+                box-shadow: 1px 1px 70px 10px rgb(248, 248, 248);
+                border: 1px solid rgb(221, 221, 221);
+                padding:10px 0;
+                border-radius: 5px;
+                font-family: arial,"Microsoft Yahei";
+            }
+            .wrap dl{
+                margin-bottom:10px;
+                background-color:whitesmoke;
+                border:1px solid #ccc;
+                background-color: rgb(245, 245, 245);
+               - border: 1px solid rgb(255, 255, 255);
+               - box-shadow: 0 1px 25px rgba(0, 0, 0, 0.15),-1px 0 0 rgba(0, 0, 0, 0.03),1px 0 0 rgba(0, 0, 0, 0.03),0 1px 0 rgba(0, 0, 0, 0.12);
+            }
+            .wrap dl:first-child dt a{
+                font-size:19px;
+            }
+            .wk-article-dl img{float:left;margin:10px;}
+            .wk-article-dl{
+                font-size:14px;
+                border-bottom: 1px solid rgb(233, 233, 233);
+                color: rgb(51, 51, 51);
+                margin:0;
+                padding:12px 20px 20px 20px;
+            }
+
+            .wk-article-dl dd{
+                color: #444;
+                line-height: 26px;
+                padding-bottom: 50px;
+                margin-left:20px;
+            }
+            .wk-article-dl dt{
+                font-size: 15px;
+                color: rgb(51, 51, 51);
+                font-weight: bold;
+                padding:5px 0;
+            }
+            .wk-article-dl dt a{}
+            .sidebar{width:15%;padding-right:25px;float:left;}
+            .content{width:53%;float:left;}
+            .right_side{width:25%;float:left;}
+            .clear{clear:both;}
+            .content textarea{
+                width:100%;
+                border: 1px solid rgb(214, 214, 214);
+            }
+            button.publish{
+                padding:5px 10px;
+                float:right;
+            }
+            .sidebar ul{margin-top:0;padding-top:0;border-right:1px solid #ccc;}
+            .sidebar li a{
+                line-height:30px;
+                display: block;
+                width:100%;
+                background-color: white;
+                padding:5px;
+                border: 1px solid rgb(238, 227, 227);
+                border-bottom:none;
+                border-top:none;
+            }
+            .sidebar li:first-child a,.sidebar li a:hover{
+                background-color: rgb(245, 245, 245);
+                border:1px solid rgb(204, 204, 204);
+                background-color: rgb(245, 245, 245);
+                font-weight: bold;
+                border: 1px solid rgb(255, 255, 255);
+                box-shadow: 0 1px 25px rgba(0, 0, 0, 0.15),-1px 0 0 rgba(0, 0, 0, 0.03),1px 0 0 rgba(0, 0, 0, 0.03),0 1px 0 rgba(0, 0, 0, 0.12);
+            }
+            .sidebar li a span{padding-right:5px;}
+            .right_side{
+                background-color: rgb(245, 245, 245);
+                border: 1px solid rgb(255, 255, 255);
+                margin-left: 20px;
+                padding:10px 8px;
+                box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15),-1px 0 0 rgba(0, 0, 0, 0.03),1px 0 0 rgba(0, 0, 0, 0.03),0 1px 0 rgba(0, 0, 0, 0.12);
+            }
+            .right_side ul{margin-top:0;padding:0;}
+            .right_side ul img{
+                margin-right:10px;
+                margin-top:10px;
+            }
+            .right_side li:first-child{
+                border-bottom:1px solid #ccc;
+            }
+            .right_side li{
+                border-bottom:none;
+                width:100%;
+                line-height:30px;
+                clear:both;
+            }
+            .right_side li a{
+                font-size: 14px;
+            }
+            .comment{
+                padding:10px 0;
+            }
+            .comment label{line-height: 30px;font-weight: bold;}
         </style>
 
         <script>
@@ -109,134 +225,116 @@
         </script>
     </head>
     <body >
-        <header class="wk-bar">
-        <ul class="wk-menu">
-            <li  class="active"><a href="javascript:launchFullscreen(document.documentElement); "> <span class="animated fadeInRightBig">Book</span><span class="animated fadeInRightBig">Said</span></a></li>
-            <li><a href="javascript:void(0);">计算机科学</a>
-            </li>
-            <li><a href="javascript:void(0);">系统架构</a>
-            </li>
-            <li><a href="javascript:void(0);">前端开发</a>
-                <ul>
-                    <li> <a href="documents/jquery" target="_blank">jQuery</a></li>
-                    <li> <a href="http://msdn.microsoft.com/zh-cn/library/d1et7k7c(v=vs.94).aspx" target="_blank">Javascript</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);">后台脚本 </a>
-                <ul>
-                    <li> <a href="documents/php" target="_blank">PHP</a></li>
-                    <li> <a href="documents/shell" target="_blank">Shell</a></li>
-                    <li> <a href="http://docs.python.org/3/tutorial/index.html" target="_blank">Python</a></li>
-                    <li> <a href="documents/nodejs/" target="_blank">Nodejs</a></li>
-                    <li> <a href=""  target="_blank">C & C++</a></li>
-                    <li> <a href="" target="_blank">C#</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);">数据存储 </a>
-                <ul>
-                    <li> <a href="" target="_blank">Mysql</a></li>
-                    <li> <a href="" target="_blank">Memcache</a></li>
-                    <li> <a href="" target="_blank">Redis</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);">服务器 </a>
-                <ul>
-                    <li> <a href="" target="_blank">Nginx</a></li>
-                    <li> <a href="" target="_blank">Apache</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);">自动化运维</a>
-                <ul>
-                    <li> <a href="documents/yunwei/" target="_blank">首页</a></li>
-                     <li> <a href="documents/yunwei/structure.jpg" target="_blank">架构图</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);">开发工具</a>
-                <ul>
-                    <li> <a href="" target="_blank">Github</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);">项目</a>
-                <ul>
-                    <li> <a href="projects/wk_ui" target="_blank">WK-UI</a></li>
-                    <li> <a href="projects/wk_ide" target="_blank">WK-IDE</a></li>
-                    <li> <a href="projects/wk_ppt" target="_blank">WK-PPT</a></li>
-                </ul>
-            </li>
-        </ul>
-            </header>
         <div class="wrap">
-          <div class="wk-tab">
-             <div class="wk-tab-content" style="height:auto;">
-                 <div  class="wk-tab-main active" name="wk-tab-1">
-                     <div class="animated " style="">
-                         <dl class="wk-article-dl">
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
-                             </dd>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
-                             </dd>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
-                             </dd>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
-                             </dd>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                         </dl>
-                                                  <dl class="wk-article-dl">
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
-                             </dd>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
-                             </dd>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
-                             </dd>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dd>沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、<br/>CEO黄章今日在魅族论坛回答
-                                 “为什么微博只关注周鸿祎一人”的<br/>提问时表示，“我乐意接
-                             </dd>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                             <dt><a href=""><b>魅族CEO黄章暗示将接受周鸿祎投资</b></a></dt>
-                         </dl>
-                     </div>
-                 </div>
-                </div>
+            <div class="logo-bar">CNN News</div>
+            <div class="sidebar">
+                <ul>
+                    <li><a href=""><span></span>Global News </a></li>
+                    <li><a href=""><span></span>China </a></li>
+                    <li><a href=""><span></span>United States</a></li>
+                    <li><a href=""><span></span>United Kingdon</a></li>
+                    <li><a href=""><span></span>Japan</a></li>
+                    <li><a href=""><span></span>France</a></li>
+                    <li><a href=""><span></span>German</a></li> 
+                    <li><a href=""><span></span>Asian</a></li>
+                    <li><a href=""><span></span>India</a></li>
+                </ul>
             </div>
+            <div class="content">
+                <dl class="wk-article-dl">
+                    <dt><a href="">What I've Learned from Two Years</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">In December of 2011 I made the best deal of my life with Richard Branson over a game of pool: he'd share with me a big idea he really wanted to come alive, and I'd donate the next year of my life to make it happen. That idea became The B Team, a global leadership force that's on a mission to catalyse better ways of doing business for the wellbeing of people and our planet.
+
+                        As soon as we finished the game as I walked over to my wife to tell her what I'd gotten us into, I knew I had made a huge gamble with time, but the right one with fate. I knew that in trying to wrangle a powerful group of amazing people from all around the world to share in and drive a new vision for business that the mission itself would mark me deeply forever. I knew that I'd learn about the challenges we face and the solutions we have at hand and in our heads; and I knew that I’d have a chance to work alongside some of the brightest and most inspirational people on earth who are trying to shape a better world for our children and their children.
+                        <div class='comment'>
+                            <label>你不想说点什么吗？</label>
+                            <textarea placeholder='say something'></textarea>
+                            <button class='publish'>Publish</button>
+                        </div>
+                    </dd>
+                    
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+                <dl class="wk-article-dl">
+                    <dt><a href="">魅族CEO黄章暗示将接受周鸿祎投资</a></dt>
+                    <dd><img align="left" src="http://ww3.sinaimg.cn/square/67f297b0gw1edpnrepjskj215t0pkwj0.jpg">沸沸扬扬的魅族融资一事或许即将水落石出。魅族创始人、CEO黄章今日在魅族论坛回答
+                        “为什么微博只关注周鸿祎一人”的提问时表示，“我乐意接
+                    </dd>
+                </dl>
+            </div>
+            <div class="right_side">
+                <ul>
+                    <li ><a href='' >May Be You Like </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a>
+                        <br/>Founding Engineer at Udemy
+                    </li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                    <li><a href=""><img src='http://m.c.lnkd.licdn.com/mpr/mpr/shrink_40_40/p/4/000/14e/347/0101b4b.jpg' align='left'><span></span>Global News </a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
         </div>
 
         <script>
-            $.fn.wk_tab = function(){
-                $(this).find(".wk-menu li").click(function(){
+            $.fn.wk_tab = function() {
+                $(this).find(".wk-menu li").click(function() {
                     $(this).closest(".wk-tab").find(".active").removeClass("active");
-                    $(this).addClass("active").closest(".wk-tab").find("div[name="+$(this).attr("name")+"]").addClass("active");
+                    $(this).addClass("active").closest(".wk-tab").find("div[name=" + $(this).attr("name") + "]").addClass("active");
                 });
             }
             $(".wk-tab").wk_tab();
-function launchFullscreen(element) {
-  if(element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.msRequestFullscreen){ 
-    element.msRequestFullscreen();  
-  } else if(element.webkitRequestFullscreen) {
-    element.webkitRequestFullScreen();
-  }
-}
+            function launchFullscreen(element) {
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.msRequestFullscreen) {
+                    element.msRequestFullscreen();
+                } else if (element.webkitRequestFullscreen) {
+                    element.webkitRequestFullScreen();
+                }
+            }
 
         </script>
 
